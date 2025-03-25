@@ -60,6 +60,20 @@ jacocoTestReport {
 		xml.required.set(true)
 		csv.required.set(false)
 	}
+
+	// exclude 대상 명시
+	classDirectories.setFrom(
+			files(classDirectories.files.collect {
+				fileTree(dir: it, exclude: [
+						'**/infrastructure/**',
+						'**/infastructure/**',
+						'**/*ExceptionControllerAdvice*',
+						'**/*HealthCheckController*',
+						'**/*DemoApplication*',
+						'**/*BaseEntity*'
+				])
+			})
+	)
 }
 
 jacocoTestCoverageVerification {
