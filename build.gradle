@@ -53,7 +53,7 @@ tasks.named('test') {
 
 jacocoTestReport {
 	dependsOn test
-//	executionData fileTree(dir: "$buildDir/jacoco", includes: ["test.exec"])
+	executionData fileTree(dir: "$buildDir/jacoco", includes: ["test.exec"])
 
 	reports {
 		html.required.set(true)
@@ -86,7 +86,7 @@ jacocoTestCoverageVerification {
 				value = 'COVEREDRATIO'
 				minimum = 1
 			}
-			excludes = ['*.infrastructure.*', '*.infastructure.*', '*.ExceptionControllerAdvice', '*.HealthCheckController', '*.DemoApplication', '*.BaseEntity']
+			excludes = ['*.infastructure.*', '*.ExceptionControllerAdvice', '*.HealthCheckController', '*.DemoApplication', '*.BaseEntity']
 		}
 	}
 }
