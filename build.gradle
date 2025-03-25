@@ -66,7 +66,7 @@ jacocoTestReport {
 			files(classDirectories.files.collect {
 				fileTree(dir: it, exclude: [
 //						'**/infrastructure/**',
-						'**/infastructure/**',
+//						'**/infastructure/**',
 						'**/*ExceptionControllerAdvice*',
 						'**/*HealthCheckController*',
 						'**/*DemoApplication*',
@@ -86,7 +86,7 @@ jacocoTestCoverageVerification {
 				value = 'COVEREDRATIO'
 				minimum = 1
 			}
-			excludes = ['*.infastructure.*', '*.ExceptionControllerAdvice', '*.HealthCheckController', '*.DemoApplication', '*.BaseEntity']
+			excludes = [ '*.ExceptionControllerAdvice', '*.HealthCheckController', '*.DemoApplication', '*.BaseEntity']
 		}
 	}
 }
